@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://TU-DOMINIO.com/sitemap.xml
+Sitemap: https://infonicsoluciones.com/sitemap.xml

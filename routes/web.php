@@ -9,6 +9,9 @@ Route::get('/', function () {
 })->middleware('setlocale');
 
 Route::get('/sitemap.xml', function () {
+    if (class_exists('\Barryvdh\Debugbar\Facades\Debugbar')) {
+        \Barryvdh\Debugbar\Facades\Debugbar::disable();
+    }
     $content = view('sitemap')->render();
     return response($content, 200)->header('Content-Type', 'application/xml');
 });
