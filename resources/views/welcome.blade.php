@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {{-- Google Search Console Verification --}}
+    <meta name="google-site-verification" content="CE_kdtCiDi4z1mE3zX02Y5Hu6NP2XWu0mAoFMTKOR6s">
+
     {{-- Google Analytics 4 --}}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
