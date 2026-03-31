@@ -24,7 +24,8 @@ class ContactController extends Controller
                 "Teléfono: " . ($data['phone'] ?? '-') . "\n\n" .
                 "Mensaje:\n{$data['message']}",
                 function ($mail) use ($data) {
-                    $mail->to('nicolasfigueredo@hotmail.com')
+                    $mail->to('nicolasfigueredo_02@hotmail.com')
+                         ->cc('infonic@infonicsoluciones.com')
                          ->subject('Nueva consulta desde la web - Infonic')
                          ->replyTo($data['email'], $data['name']);
                 }
