@@ -16,18 +16,22 @@ class ContactController extends Controller
             'message' => ['required', 'string', 'max:2000'],
         ]);
 
-        Mail::raw(
-            "Nombre: {$data['name']}\n" .
-            "Email: {$data['email']}\n" .
-            "Teléfono: " . ($data['phone'] ?? '-') . "\n\n" .
-            "Mensaje:\n{$data['message']}",
-            function ($mail) use ($data) {
-                $mail->to('nicolasfigueredo@hotmail.com')
-                     ->subject('Nueva consulta desde la web - Infonic')
-                     ->replyTo($data['email'], $data['name']);
-            }
-        );
+        try {
+            Mail::raw(
+                "Nombre: {$data['name']}\n" .
+                "Email: {$data['email']}\n" .
+                "Teléfono: " . ($data['phone'] ?? '-') . "\n\n" .
+                "Mensaje:\n{$data['message']}",
+                function ($mail) use ($data) {
+                    $mail->to('nicolasfigueredo@hotmail.com')
+                         ->subject('Nueva consulta desde la web - Infonic')
+                         ->replyTo($data['email'], $data['name']);
+                }
+            );
 
-        return back()->with('success', 'Tu consulta fue enviada correctamente.');
+            return redirect('/#contacto')->with('success', 'Tu consulta fue enviada correctamente.');
+        } catch (\Exception $e) {
+            return redirect('/#contacto')->withInput()->with('error', 'Hubo un problema al enviar el mensaje. Por favor intentá de nuevo o contactanos por WhatsApp.');
+        }
     }
 }

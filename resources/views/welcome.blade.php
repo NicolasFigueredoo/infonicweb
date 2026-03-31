@@ -1280,6 +1280,12 @@
                             </div>
                         @endif
 
+                        @if (session('error'))
+                            <div class="mb-6 rounded-2xl bg-red-50 border border-red-200 text-red-700 px-4 py-3">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+
                         <form action="{{ route('contact.send') }}" method="POST" class="space-y-6">
                             @csrf
 
