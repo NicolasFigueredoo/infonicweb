@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -31,6 +32,7 @@ class ContactController extends Controller
 
             return redirect('/#contacto')->with('success', 'Tu consulta fue enviada correctamente.');
         } catch (\Exception $e) {
+            \Log::error('Mail error: ' . $e->getMessage());
             return redirect('/#contacto')->withInput()->with('error', 'Hubo un problema al enviar el mensaje. Por favor intentá de nuevo o contactanos por WhatsApp.');
         }
     }
