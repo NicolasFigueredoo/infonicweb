@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"c:/Users/Nicolas Figueredo/Desktop/landing-empresa/lang/es\")",
+      "Bash(mkdir -p \"c:/Users/Nicolas Figueredo/Desktop/landing-empresa/lang/en\")",
+      "Bash(mkdir -p \"c:/Users/Nicolas Figueredo/Desktop/landing-empresa/lang/pt\")",
+      "Bash(mkdir -p \"c:/Users/Nicolas Figueredo/Desktop/landing-empresa/app/Http/Middleware\")",
+      "Bash(python3 -c \":*)",
+      "Bash(powershell -Command \"Write-Host ''PowerShell available''\")",
+      "Bash(powershell.exe -Command \"Get-Content ''c:/Users/Nicolas Figueredo/Desktop/landing-empresa/resources/views/welcome.blade.php'' | Measure-Object -Line\")",
+      "Bash(printf '%s\\\\n' 'import sys' 'path = r\"\"c:\\\\Users\\\\Nicolas Figueredo\\\\Desktop\\\\landing-empresa\\\\resources\\\\views\\\\welcome.blade.php\"\"' 'lines = []' 'lines.append\\(\"\"<!DOCTYPE html>\"\"\\)' 'print\\(\"\"Script loaded OK, path:\"\", path\\)')",
+      "Bash(python /tmp/gen_blade.py)",
+      "Bash(powershell.exe -NoProfile -Command \":*)"
+    ]
+  }
+}
